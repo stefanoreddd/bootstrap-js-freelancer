@@ -135,15 +135,15 @@
 
               <div class="mb-3 col-12 col-md-6">
                   <label for="fname" class="form-label">Hours requested</label>
-                  <input type="text" class="form-control" id="HoursWork" aria-describedby="emailHelp">
+                  <input type="text" class="form-control" id="hoursWork" aria-describedby="emailHelp">
               </div>
 
               <div class="mb-3 col-12 col-md-6">
                   <label for="work-type" class="form-label">Type of work</label>
                   <select name="work" id="work-type" class="form-select">
-                      <option value="backend">Backend (+ €20,50)</option>
-                      <option value="frontend">Frontend (+ €15,30)</option>
-                      <option value="project-analisys">Project Analisys (+ €33,60)</option>
+                      <option value="backend">Backend (€20,50/h)</option>
+                      <option value="frontend">Frontend (€15,30/h)</option>
+                      <option value="project-analisys">Project Analisys (€33,60/h)</option>
                   </select>
               </div>
 
@@ -160,14 +160,19 @@
 
             <div class="row text-center mb-5 mx-0">
               <div class="col">
-                <button type="button" class="text-center btn btn-warning">Calculate</button>
-              </div>
-
-              <div class="row text-center mb-5 mx-0">
-                <p id="price"></p>
+                <button type="button" class="text-center btn btn-warning" id="button">Calculate</button>
               </div>
             </div>
           </form>
+
+          <div class="row text-center mb-5 mx-0">
+            <span id="coupon-errore"></span></div>
+          </div>
+
+          <div class="row text-center mb-5 mx-0">
+            <h2>Your Price</h2>
+            <div class="price-container mb-5"><span id="price">--.--</span> €</div>
+          </div>
         </div>
 
       </section>
