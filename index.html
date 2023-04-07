@@ -12,6 +12,7 @@
     />
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.7.0/font/bootstrap-icons.css">
     <link rel="icon" href="favicon.ico" />
+    <link rel="stylesheet" href="./css/style.css">
     <title>Portfolio</title>
   </head>
   <body>
@@ -114,51 +115,59 @@
         <div class="container p-4">
           <h2 class="text-center text-uppercase">Want an offer?</h2>
           <!-- TODO: PROGETTARE IL FORM QUI -->
-
-          <div class="row mx-0">
-            <div class="mb-3 col-12 col-md-6">
-                <label for="fname" class="form-label">First Name</label>
-                <input type="text" class="form-control" id="fanem" aria-describedby="emailHelp">
-            </div>
-
-            <div class="mb-3 col-12 col-md-6">
-                <label for="fname" class="form-label">Last Name</label>
-                <input type="text" class="form-control" id="lname" aria-describedby="emailHelp">
-            </div>
-
-            <div class="mb-3 col-12 col-md-6">
-                <label for="exampleFormControlInput1" class="form-label">Email address</label>
-                <input type="email" class="form-control" id="exampleFormControlInput1" placeholder="name@example.com">
-            </div>
-
-            <div class="mb-3 col-12 col-md-6">
-                <label for="fname" class="form-label">Hours requested</label>
-                <input type="text" class="form-control" id="HoursWork" aria-describedby="emailHelp">
-            </div>
-
-            <div class="mb-3 col-12 col-md-6">
-                <label for="disabledSelect" class="form-label">Type of work</label>
-                <select id="typework1" class="form-select">
-                    <option>Select the type of work</option>
-                </select>
-            </div>
-
-            <div class="mb-3 col-12 col-md-6">
-                <label for="fname" class="form-label">Discount code</label>
-                <input type="text" class="form-control" id="discountcode" aria-describedby="emailHelp">
-            </div>
-
-              <div class="mb-3">
-                <label for="exampleFormControlTextarea1" class="form-label">Message</label>
-                <textarea class="form-control" id="message" rows="4"></textarea>
+        
+          <form onsubmit="calculateWorkPrice(event)">
+            <div class="row mx-0">
+              <div class="mb-3 col-12 col-md-6">
+                  <label for="fname" class="form-label">First Name</label>
+                  <input type="text" class="form-control" id="fanem" aria-describedby="emailHelp">
               </div>
-          </div>
 
-          <div class="row text-center mb-5 mx-0">
+              <div class="mb-3 col-12 col-md-6">
+                  <label for="fname" class="form-label">Last Name</label>
+                  <input type="text" class="form-control" id="lname" aria-describedby="emailHelp">
+              </div>
+
+              <div class="mb-3 col-12 col-md-6">
+                  <label for="exampleFormControlInput1" class="form-label">Email address</label>
+                  <input type="email" class="form-control" id="exampleFormControlInput1" placeholder="name@example.com">
+              </div>
+
+              <div class="mb-3 col-12 col-md-6">
+                  <label for="fname" class="form-label">Hours requested</label>
+                  <input type="text" class="form-control" id="HoursWork" aria-describedby="emailHelp">
+              </div>
+
+              <div class="mb-3 col-12 col-md-6">
+                  <label for="work-type" class="form-label">Type of work</label>
+                  <select name="work" id="work-type" class="form-select">
+                      <option value="backend">Backend (+ €20,50)</option>
+                      <option value="frontend">Frontend (+ €15,30)</option>
+                      <option value="project-analisys">Project Analisys (+ €33,60)</option>
+                  </select>
+              </div>
+
+              <div class="mb-3 col-12 col-md-6">
+                  <label for="fname" class="form-label">Discount code</label>
+                  <input type="text" class="form-control" id="coupon" aria-describedby="emailHelp">
+              </div>
+
+                <div class="mb-3">
+                  <label for="exampleFormControlTextarea1" class="form-label">Message</label>
+                  <textarea class="form-control" id="message" rows="4"></textarea>
+                </div>
+            </div>
+
+            <div class="row text-center mb-5 mx-0">
               <div class="col">
-                  <button type="button" class="text-center btn btn-warning">Send</button>
+                <button type="button" class="text-center btn btn-warning">Calculate</button>
               </div>
-          </div>
+
+              <div class="row text-center mb-5 mx-0">
+                <p id="price"></p>
+              </div>
+            </div>
+          </form>
         </div>
 
       </section>
@@ -194,5 +203,6 @@
       integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
       crossorigin="anonymous"
     ></script>
+    <script src="./js/main.js"></script>
   </body>
 </html>
